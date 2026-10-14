@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kelola Sejarah Desa — Panel Admin Desa Ko'Mara</title>
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<div class="admin-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <img src="../assets/logo-desa.png" alt="">
+      <div><b>DESA KO'MARA</b><span>Panel Aparat Desa</span></div>
+    </div>
+
+    <div class="sidebar-section-label">Menu Utama</div>
+    <nav>
+      <a href="dashboard.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+        Dashboard
+      </a>
+      <a href="penduduk.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><circle cx="17" cy="8" r="2.5"/><path d="M16 14.2c2.6.5 4.6 2.5 5 5.8"/></svg>
+        Data Penduduk
+      </a>
+      <a href="saran.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11v2a1 1 0 0 0 1 1h2l4 4V6l-4 4H4a1 1 0 0 0-1 1z"/><path d="M16 8a4 4 0 0 1 0 8"/></svg>
+        Saran &amp; Aduan
+      </a>
+    </nav>
+
+    <div class="sidebar-section-label">Konten Website</div>
+    <nav>
+      <a href="berita.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>
+        Berita
+      </a>
+      <a href="pengumuman.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11v2a1 1 0 0 0 1 1h2l4 4V6l-4 4H4a1 1 0 0 0-1 1z"/><path d="M16 8a4 4 0 0 1 0 8"/></svg>
+        Pengumuman
+      </a>
+      <a href="galeri.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="9" r="1.7"/><path d="m21 15-5-5-9 9"/></svg>
+        Galeri Desa
+      </a>
+      <a href="dokumen.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6"/><path d="M9 11h6"/></svg>
+        Dokumen Desa
+      </a>
+      <a href="profil-desa.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        Profil Desa
+      </a>
+      <a href="sejarah.html" class="active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        Sejarah
+      </a>
+      <a href="geografi.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M2 12h20M12 2c2.5 2.7 4 6.2 4 10s-1.5 7.3-4 10c-2.5-2.7-4-6.2-4-10s1.5-7.3 4-10z"/></svg>
+        Geografi
+      </a>
+      <a href="struktur.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2.5"/><path d="M12 7.5V12"/><circle cx="6" cy="18" r="2.2"/><circle cx="12" cy="18" r="2.2"/><circle cx="18" cy="18" r="2.2"/><path d="M6 15.8V12h12v3.8"/></svg>
+        Struktur Pemerintahan
+      </a>
+          <a href="informasi.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5"/><circle cx="12" cy="8" r=".5" fill="currentColor"/></svg>
+        Informasi Desa
+      </a>
+    </nav>
+
+    <div class="sidebar-section-label">Akun</div>
+    <nav>
+      <a href="profil.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+        Profil Saya
+      </a>
+      <a href="akun.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><circle cx="17" cy="8" r="2.5"/><path d="M16 14.2c2.6.5 4.6 2.5 5 5.8"/></svg>
+        Kelola Akun Aparat
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="avatar" id="userAvatar">AD</div>
+        <div><b id="userName">—</b><span id="userRole">—</span></div>
+      </div>
+      <a href="#" class="logout-link" id="logoutBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+        Keluar
+      </a>
+    </div>
+  </aside>
+
+  <div class="admin-main">
+    <div class="admin-topbar">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <button class="mobile-topbar-toggle" id="menuToggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <div>
+          <h1>Kelola Sejarah Desa</h1>
+          <div class="breadcrumb">Narasi dan riwayat kepala desa yang tampil di halaman Sejarah</div>
+        </div>
+      </div>
+      <div class="admin-topbar-right">
+        <span class="badge-role" id="topbarRole">—</span>
+      </div>
+    </div>
+
+    <div class="admin-content">
+      <div class="card" style="max-width:720px;margin-bottom:20px;">
+        <div class="card-head">
+          <div>
+            <h3>Narasi Sejarah</h3>
+            <p>Tampil sebagai paragraf pembuka di halaman Sejarah.</p>
+          </div>
+        </div>
+        <div class="form-success" id="narasiSuccess" style="display:none;">Narasi sejarah berhasil disimpan.</div>
+        <div class="field-error" id="narasiError"></div>
+        <form id="narasiForm">
+          <div class="field" style="margin-bottom:12px;">
+            <label for="fSejarah">Narasi</label>
+            <textarea id="fSejarah" rows="7" style="width:100%;border:1px solid var(--border);border-radius:8px;padding:10px 12px;font-family:inherit;font-size:0.87rem;resize:vertical;" placeholder="Tuliskan narasi sejarah desa. Pisahkan tiap paragraf dengan baris kosong."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-sm" id="btnSimpanNarasi">Simpan Narasi</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <h3>Daftar Kepala Desa</h3>
+            <p>Urutkan dari kepala desa pertama ke yang paling baru menjabat.</p>
+          </div>
+          <button class="btn btn-primary btn-sm" id="btnAdd">+ Tambah Data</button>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" style="width:100%;">
+            <thead>
+              <tr><th>Urutan</th><th>Nama Kepala Desa</th><th>Mulai</th><th>Akhir</th><th>Keterangan</th><th></th></tr>
+            </thead>
+            <tbody id="riwayatList"></tbody>
+          </table>
+        </div>
+
+        <div class="empty-state" id="emptyState" style="display:none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <h4>Belum ada data riwayat</h4>
+          <p>Tambahkan data kepala desa yang pernah menjabat.</p>
+          <button class="btn btn-primary btn-sm" id="btnAddEmpty">+ Tambah Data</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Tambah/Edit -->
+<div class="modal-scrim" id="modalScrim">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="modalTitle">Tambah Data</h3>
+      <button class="modal-close" id="modalClose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    </div>
+    <form id="riwayatForm">
+      <input type="hidden" id="fId">
+      <div class="field" style="margin-bottom:14px;">
+        <label for="fNama">Nama Kepala Desa</label>
+        <input type="text" id="fNama" required placeholder="Contoh: Ruslam Adiputra, ST">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;">
+        <div class="field">
+          <label for="fMulai">Mulai Menjabat</label>
+          <input type="text" id="fMulai" required placeholder="Contoh: 2022">
+        </div>
+        <div class="field">
+          <label for="fAkhir">Akhir Menjabat</label>
+          <input type="text" id="fAkhir" required placeholder="Contoh: 2028 / Sekarang">
+        </div>
+      </div>
+      <div class="field" style="margin-bottom:14px;">
+        <label for="fKeterangan">Keterangan</label>
+        <input type="text" id="fKeterangan" placeholder="Contoh: Kades / Plt. Kades">
+      </div>
+      <div class="field" style="margin-bottom:6px;">
+        <label for="fUrutan">Urutan Tampil</label>
+        <input type="number" id="fUrutan" placeholder="Contoh: 1 (semakin kecil semakin awal tampil)">
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" id="btnCancel">Batal</button>
+        <button type="submit" class="btn btn-primary" id="btnSubmit">Simpan Data</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>
+  <span id="toastMsg">Berhasil disimpan</span>
+</div>
+
+<script src="/api/config"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/riwayat-data.js"></script>
+<script src="js/profil-desa-data.js"></script>
+<script>
+  function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, m => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[m]));
+  }
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    document.getElementById('toastMsg').textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2600);
+  }
+
+  let cache = [];
+
+  async function renderList() {
+    const box = document.getElementById('riwayatList');
+    const empty = document.getElementById('emptyState');
+    try {
+      cache = await getRiwayatList();
+    } catch (err) {
+      box.innerHTML = `<tr><td colspan="6" style="color:var(--red-500);">${escapeHtml(err.message)}</td></tr>`;
+      return;
+    }
+
+    if (cache.length === 0) {
+      box.innerHTML = '';
+      empty.style.display = 'block';
+      return;
+    }
+    empty.style.display = 'none';
+
+    box.innerHTML = cache.map(r => `
+      <tr>
+        <td>${r.urutan ?? '-'}</td>
+        <td>${escapeHtml(r.nama)}</td>
+        <td>${escapeHtml(r.mulai)}</td>
+        <td>${escapeHtml(r.akhir)}</td>
+        <td>${escapeHtml(r.keterangan || '-')}</td>
+        <td style="white-space:nowrap;">
+          <button class="icon-btn" title="Ubah" onclick="openEdit(${r.id})">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
+          </button>
+          <button class="icon-btn danger" title="Hapus" onclick="confirmDelete(${r.id})">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+          </button>
+        </td>
+      </tr>
+    `).join('');
+  }
+
+  const modalScrim = document.getElementById('modalScrim');
+  const riwayatForm = document.getElementById('riwayatForm');
+  const narasiForm = document.getElementById('narasiForm');
+
+  function openModal(title) {
+    document.getElementById('modalTitle').textContent = title;
+    modalScrim.classList.add('open');
+  }
+  function closeModal() {
+    modalScrim.classList.remove('open');
+    riwayatForm.reset();
+    document.getElementById('fId').value = '';
+  }
+
+  document.getElementById('btnAdd').addEventListener('click', () => { closeModal(); openModal('Tambah Data'); });
+  document.getElementById('btnAddEmpty').addEventListener('click', () => { closeModal(); openModal('Tambah Data'); });
+  document.getElementById('btnCancel').addEventListener('click', closeModal);
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  modalScrim.addEventListener('click', (e) => { if (e.target === modalScrim) closeModal(); });
+
+  function openEdit(id) {
+    const r = cache.find(x => x.id === id);
+    if (!r) return;
+    document.getElementById('fId').value = r.id;
+    document.getElementById('fNama').value = r.nama;
+    document.getElementById('fMulai').value = r.mulai;
+    document.getElementById('fAkhir').value = r.akhir;
+    document.getElementById('fKeterangan').value = r.keterangan || '';
+    document.getElementById('fUrutan').value = r.urutan ?? '';
+    openModal('Ubah Data');
+  }
+
+  async function confirmDelete(id) {
+    const r = cache.find(x => x.id === id);
+    if (!confirm(`Hapus data "${r?.nama}"? Tindakan ini tidak dapat dibatalkan.`)) return;
+    try {
+      await deleteRiwayat(id);
+      showToast('Data berhasil dihapus.');
+      renderList();
+    } catch (err) {
+      showToast(err.message);
+    }
+  }
+
+  riwayatForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const id = document.getElementById('fId').value;
+    const submitBtn = document.getElementById('btnSubmit');
+    submitBtn.disabled = true;
+
+    try {
+      await saveRiwayat({
+        id: id ? Number(id) : null,
+        nama: document.getElementById('fNama').value.trim(),
+        mulai: document.getElementById('fMulai').value.trim(),
+        akhir: document.getElementById('fAkhir').value.trim(),
+        keterangan: document.getElementById('fKeterangan').value.trim(),
+        urutan: Number(document.getElementById('fUrutan').value || 0),
+      });
+      closeModal();
+      showToast(id ? 'Data berhasil diperbarui.' : 'Data baru berhasil ditambahkan.');
+      renderList();
+    } catch (err) {
+      showToast(err.message);
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+
+  narasiForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const successBox = document.getElementById('narasiSuccess');
+    const errorBox = document.getElementById('narasiError');
+    successBox.style.display = 'none';
+    errorBox.classList.remove('show');
+    const btn = document.getElementById('btnSimpanNarasi');
+    btn.disabled = true;
+    try {
+      const current = await getProfilDesa();
+      await updateProfilDesa({ ...current, sejarah: document.getElementById('fSejarah').value.trim() });
+      successBox.style.display = 'block';
+    } catch (err) {
+      errorBox.textContent = err.message;
+      errorBox.classList.add('show');
+    } finally {
+      btn.disabled = false;
+    }
+  });
+
+  (async () => {
+    const session = await requireAuth();
+    if (!session) return;
+    document.getElementById('userName').textContent = session.nama;
+    document.getElementById('userRole').textContent = session.role;
+    document.getElementById('userAvatar').textContent = initials(session.nama);
+    document.getElementById('topbarRole').textContent = session.role;
+    document.getElementById('logoutBtn').addEventListener('click', (e) => { e.preventDefault(); logout(); });
+    document.getElementById('menuToggle')?.addEventListener('click', () => document.getElementById('sidebar').classList.toggle('open'));
+    renderList();
+    try {
+      const p = await getProfilDesa();
+      document.getElementById('fSejarah').value = p.sejarah || '';
+    } catch (err) { /* diamkan, form tetap kosong */ }
+  })();
+</script>
+</body>
+</html>

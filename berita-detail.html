@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Berita — Desa Ko'Mara</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .berita-detail-img { width: 100%; max-height: 420px; object-fit: cover; border-radius: 14px; margin-bottom: 26px; }
+  .berita-detail-meta { display: flex; gap: 18px; color: var(--ink-500); font-size: 0.85rem; margin-bottom: 22px; }
+  .berita-detail-meta span { display: inline-flex; align-items: center; gap: 6px; }
+  .berita-detail-meta svg { width: 15px; height: 15px; }
+  .berita-detail-body { font-size: 1rem; line-height: 1.8; color: var(--ink-700); white-space: pre-line; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-left">
+      <span class="topbar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        Desa Ko'Mara, Kec. Polongbangkeng Timur, Kab. Takalar, Prov. Sulawesi Selatan
+      </span>
+    </div>
+    <div class="topbar-right">
+      <span class="topbar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        info@desakomara.id
+      </span>
+      <span class="topbar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <span id="topbar-date">Memuat tanggal...</span>
+      </span>
+      <div class="topbar-socials">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="m10 9 5 3-5 3z" fill="currentColor" stroke="none"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-desa.png" alt="Logo Desa Ko'Mara">
+      <div>
+        <div class="brand-name">DESA KO'MARA</div>
+        <div class="brand-sub">Kecamatan Polongbangkeng Timur<br>Kabupaten Takalar &middot; Provinsi Sulawesi Selatan</div>
+      </div>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Beranda</a>
+      <a href="sejarah.html">Sejarah</a>
+      <a href="geografi.html">Geografi</a>
+      <a href="struktur.html">Struktur Pemerintahan</a>
+      <a href="informasi.html">Informasi Desa</a>
+      <a href="saran.html">Saran</a>
+    </nav>
+    <div class="header-actions">
+      <form class="search-box" role="search">
+        <input type="text" placeholder="Cari di website...">
+        <button type="submit" aria-label="Cari"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
+      </form>
+      <button class="nav-toggle" aria-label="Buka menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="scrim"></div>
+<nav class="mobile-nav">
+  <button class="mobile-nav-close" aria-label="Tutup menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+  <a href="index.html">Beranda</a>
+  <a href="sejarah.html">Sejarah</a>
+  <a href="geografi.html">Geografi</a>
+  <a href="struktur.html">Struktur Pemerintahan</a>
+  <a href="informasi.html">Informasi Desa</a>
+  <a href="saran.html">Saran</a>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Beranda</a><span>/</span>Berita</div>
+    <div class="eyebrow">Berita Desa</div>
+    <h1 id="beritaJudul">Memuat berita...</h1>
+  </div>
+</section>
+
+<section class="page-body">
+  <div class="container">
+    <div class="prose" style="max-width:820px;" id="beritaWrap">
+      <p style="color:var(--ink-500);">Memuat isi berita...</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer">
+      <div class="footer-brand">
+        <img src="assets/logo-desa.png" alt="Logo Desa Ko'Mara">
+        <div>
+          <h4>Desa Ko'Mara</h4>
+          <p>Kec. Polongbangkeng Timur<br>Kab. Takalar<br>Prov. Sulawesi Selatan</p>
+        </div>
+      </div>
+      <p class="footer-tagline">"Melayani dengan Hati,<br>Membangun untuk Negeri"</p>
+    </div>
+    <div class="footer">
+      <h5>Tautan Cepat</h5>
+      <ul class="footer-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="sejarah.html">Sejarah Desa</a></li>
+        <li><a href="geografi.html">Geografi Desa</a></li>
+        <li><a href="struktur.html">Struktur Pemerintahan</a></li>
+        <li><a href="informasi.html">Informasi Desa</a></li>
+        <li><a href="saran.html">Saran</a></li>
+      </ul>
+    </div>
+    <div class="footer">
+      <h5>Informasi</h5>
+      <ul class="footer-info">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><span><b>Jam Pelayanan</b>Senin - Jumat, 08.00 - 16.00 WITA</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span><b>Alamat Kantor Desa</b>Desa Ko'Mara, Kec. Polongbangkeng Timur, Kab. Takalar</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 2.9a2 2 0 0 1-.4 2.1L8 10a16 16 0 0 0 6 6l1.3-1.4a2 2 0 0 1 2.1-.4c.9.4 1.9.6 2.9.7a2 2 0 0 1 1.7 2.1z"/></svg><span><b>Telepon / WhatsApp</b>0822-1234-5678</span></li>
+      </ul>
+    </div>
+    <div class="footer">
+      <h5>Ikuti Kami</h5>
+      <div class="footer-socials">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="m10 9 5 3-5 3z" fill="currentColor" stroke="none"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    &copy; 2025 Desa Ko'Mara. All rights reserved. &nbsp;&middot;&nbsp;
+    <a href="admin/login.html" class="footer-admin-link">Login Aparat Desa</a>
+  </div>
+</footer>
+
+<script src="/api/config"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+<script>
+  function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, m => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[m]));
+  }
+  function formatTanggalIndo(iso) {
+    if (!iso) return '-';
+    return new Date(iso).toLocaleDateString('id-ID', { day: '2-digit', month: 'long', year: 'numeric' });
+  }
+
+  async function muatDetailBerita() {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const wrap = document.getElementById('beritaWrap');
+    const judulEl = document.getElementById('beritaJudul');
+
+    if (!id) {
+      judulEl.textContent = 'Berita tidak ditemukan';
+      wrap.innerHTML = '<p style="color:var(--ink-500);">Alamat berita tidak valid. <a href="index.html">Kembali ke beranda</a>.</p>';
+      return;
+    }
+
+    try {
+      const { data: b, error } = await getSupabaseClient().from('berita')
+        .select('*').eq('id', id).maybeSingle();
+      if (error) throw error;
+      if (!b) throw new Error('Berita tidak ditemukan.');
+      document.getElementById('pageTitle').textContent = `${b.judul} — Desa Ko'Mara`;
+      judulEl.textContent = b.judul;
+
+      const gambarSrc = b.gambar
+        ? publicAssetUrl(b.gambar)
+        : `https://picsum.photos/seed/berita${b.id}/900/500`;
+
+      wrap.innerHTML = `
+        <img class="berita-detail-img" src="${gambarSrc}" alt="${escapeHtml(b.judul)}">
+        <div class="berita-detail-meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> ${formatTanggalIndo(b.created_at)}</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg> ${b.dilihat || 0} dilihat</span>
+        </div>
+        <div class="berita-detail-body">${escapeHtml(b.isi)}</div>
+        <p style="margin-top:32px;"><a href="index.html" class="link-more">&larr; Kembali ke Beranda</a></p>
+      `;
+    } catch (err) {
+      judulEl.textContent = 'Berita tidak ditemukan';
+      wrap.innerHTML = `<p style="color:var(--red-500);">${escapeHtml(err.message)}</p><p><a href="index.html">Kembali ke beranda</a></p>`;
+    }
+  }
+
+  muatDetailBerita();
+</script>
+</body>
+</html>
