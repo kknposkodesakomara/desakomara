@@ -3,7 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title id="pageTitle">Berita — Desa Ko'Mara</title>
+<title id="pageTitle">Berita Desa Ko'Mara | Kabupaten Takalar</title>
+<meta name="description" id="metaDescription" content="Baca berita dan informasi terbaru dari Desa Ko'Mara, Kecamatan Polongbangkeng Timur, Kabupaten Takalar, Sulawesi Selatan.">
+<meta property="og:locale" content="id_ID">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Desa Ko'Mara">
+<meta property="og:title" id="ogTitle" content="Berita Desa Ko'Mara | Kabupaten Takalar">
+<meta property="og:description" id="ogDescription" content="Baca berita dan informasi terbaru dari Desa Ko'Mara, Kecamatan Polongbangkeng Timur, Kabupaten Takalar, Sulawesi Selatan.">
+<meta property="og:url" id="ogUrl" content="https://www.desa-komara.my.id/berita-detail.html">
+<meta property="og:image" id="ogImage" content="https://www.desa-komara.my.id/assets/desa-komara-og.jpg">
+<meta property="og:image:alt" content="Loket pelayanan Desa Ko'Mara">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" id="twitterTitle" content="Berita Desa Ko'Mara | Kabupaten Takalar">
+<meta name="twitter:description" id="twitterDescription" content="Baca berita dan informasi terbaru dari Desa Ko'Mara, Kecamatan Polongbangkeng Timur, Kabupaten Takalar, Sulawesi Selatan.">
+<meta name="twitter:image" id="twitterImage" content="https://www.desa-komara.my.id/assets/desa-komara-og.jpg">
+<link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/style.css">
 <style>
   .berita-detail-img { width: 100%; max-height: 420px; object-fit: cover; border-radius: 14px; margin-bottom: 26px; }
@@ -154,6 +168,62 @@
     return new Date(iso).toLocaleDateString('id-ID', { day: '2-digit', month: 'long', year: 'numeric' });
   }
 
+  function setMeta(selector, value) {
+    const element = document.querySelector(selector);
+    if (element) element.setAttribute('content', value);
+  }
+
+  function setCanonical(url) {
+    let element = document.querySelector('link[rel="canonical"]');
+    if (!element) {
+      element = document.createElement('link');
+      element.rel = 'canonical';
+      document.head.appendChild(element);
+    }
+    element.href = url;
+  }
+
+  function updateBeritaSeo(berita, description, imageUrl) {
+    const title = `${berita.judul} — Desa Ko'Mara`;
+    const url = `https://www.desa-komara.my.id/berita-detail.html?id=${encodeURIComponent(String(berita.id))}`;
+    document.title = title;
+    const titleEl = document.getElementById('pageTitle');
+    if (titleEl) titleEl.textContent = title;
+    setMeta('meta[name="description"]', description);
+    setMeta('meta[property="og:title"]', title);
+    setMeta('meta[property="og:description"]', description);
+    setMeta('meta[property="og:url"]', url);
+    setMeta('meta[property="og:image"]', imageUrl);
+    setMeta('meta[name="twitter:title"]', title);
+    setMeta('meta[name="twitter:description"]', description);
+    setMeta('meta[name="twitter:image"]', imageUrl);
+    setCanonical(url);
+
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'NewsArticle',
+      headline: berita.judul,
+      description,
+      image: [imageUrl],
+      datePublished: berita.created_at,
+      dateModified: berita.updated_at || berita.created_at,
+      mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+      publisher: {
+        '@type': 'Organization',
+        name: "Pemerintah Desa Ko'Mara",
+        logo: { '@type': 'ImageObject', url: 'https://www.desa-komara.my.id/assets/logo-desa.png' }
+      }
+    };
+    let schemaEl = document.getElementById('newsArticleSchema');
+    if (!schemaEl) {
+      schemaEl = document.createElement('script');
+      schemaEl.id = 'newsArticleSchema';
+      schemaEl.type = 'application/ld+json';
+      document.head.appendChild(schemaEl);
+    }
+    schemaEl.textContent = JSON.stringify(schema).replace(/</g, '\u003c');
+  }
+
   async function muatDetailBerita() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
@@ -171,12 +241,14 @@
         .select('*').eq('id', id).maybeSingle();
       if (error) throw error;
       if (!b) throw new Error('Berita tidak ditemukan.');
-      document.getElementById('pageTitle').textContent = `${b.judul} — Desa Ko'Mara`;
       judulEl.textContent = b.judul;
 
-      const gambarSrc = b.gambar
-        ? publicAssetUrl(b.gambar)
-        : `https://picsum.photos/seed/berita${b.id}/900/500`;
+      const defaultImage = 'https://www.desa-komara.my.id/assets/desa-komara-og.jpg';
+      const gambarSrc = b.gambar ? (publicAssetUrl(b.gambar) || defaultImage) : defaultImage;
+      const plainIsi = String(b.isi || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+      const excerpt = plainIsi.length > 160 ? `${plainIsi.slice(0, 157).trimEnd()}…` : plainIsi;
+      const description = excerpt || `Berita dan informasi terbaru dari Desa Ko'Mara, Kecamatan Polongbangkeng Timur, Kabupaten Takalar.`;
+      updateBeritaSeo(b, description, gambarSrc);
 
       wrap.innerHTML = `
         <img class="berita-detail-img" src="${gambarSrc}" alt="${escapeHtml(b.judul)}">

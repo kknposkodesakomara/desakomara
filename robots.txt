@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Admin HTML carries noindex directives; leave it crawlable so crawlers can see them.
+Sitemap: https://www.desa-komara.my.id/sitemap.xml
